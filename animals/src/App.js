@@ -4,6 +4,8 @@ import { Route, Switch } from "react-router-dom";
 
 import Login from "./components/Login.js";
 import Header from "./components/Header.js";
+import PrivateRoute from './utils/PrivateRoute';
+import AnimalDashboard from './components/AnimalDashboard';
 
 export default function App() {
 
@@ -11,8 +13,8 @@ export default function App() {
     <div className="App">
       <Header />
       <Switch>
-        {/* Build out a Private Route */}
-        <Route exact path="/login" component={Login} />
+        <PrivateRoute exact path='/creatures' component={AnimalDashboard}/>
+        <Route exact path="/login" component={Login}/>
       </Switch>
     </div>
   );
